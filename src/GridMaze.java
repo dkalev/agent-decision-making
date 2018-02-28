@@ -1,7 +1,7 @@
 
 public class GridMaze {
-	private static final int NUM_ROW = 6;
-	private static final int NUM_COL = 6;
+	public static final int NUM_ROW = 6;
+	public static final int NUM_COL = 6;
 	
 	private static final double WHITE_REWARD = -0.04;
 	private static final double GREEN_REWARD = +1.0;
@@ -60,5 +60,19 @@ public class GridMaze {
 	
 	public State[][] getGridMaze(){
 		return grid;
+	}
+	
+	public void displayGridMaze() {
+		for(int row = 0; row < NUM_ROW; row++) {
+			System.out.print("|");
+			for(int col = 0; col < NUM_COL; col++) {
+				double cur = grid[row][col].getReward();
+				if (cur >= 0)
+					System.out.format("  %.2f |", cur);
+				else
+					System.out.format(" %.2f |", cur);
+			}
+			System.out.println();
+		}
 	}
 }
