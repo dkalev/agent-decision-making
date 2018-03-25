@@ -1,3 +1,4 @@
+package MDP;
 
 public class State {
 	public static final boolean WALL = true;
@@ -22,4 +23,5 @@ public class State {
 	public boolean isWall() {
 		return isWall;
 	}
+
 }
